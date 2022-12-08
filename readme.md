@@ -48,7 +48,7 @@ DOTS
 
 
 
-- If you want the slider to automatically slide call AutoSlide
+If you want the slider to automatically slide, call the AutoSlide method
 E.G. slider.AutoSlide(3000);
 
 If no argument is set, 5000ms is the default
