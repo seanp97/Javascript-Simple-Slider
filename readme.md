@@ -1,4 +1,4 @@
-Simple JS Slider library
+Simple slider JS library
 
 HTML needs to be as follows...
 
@@ -30,3 +30,5 @@ We then call the two methods for the previous and next.
 * slider.NextBtn('#next');
 
 Again, these can be called something different. Also change reference in HTML.
+
+Make sure to include both the slider.css and slider.js files in your HTML.
