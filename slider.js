@@ -16,9 +16,11 @@ class Slider {
             image.classList.add(`slide-image-${this.sliderIndex}`)
         });
 
+        this.mainImage = document.querySelector(`${this._wrapper} > img`);
+        this.mainImage.classList.add('slider-main-image');
+        this.mainImage.style.minWidth = '200px';
+        this.mainImage.style.minHeight = '200px';
         document.querySelector('.slider img:first-of-type').classList.add('active-slider');
-
-        console.log('Initialized');
     }
 
     PrevBtn(el) {
