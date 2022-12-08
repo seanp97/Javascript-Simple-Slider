@@ -29,8 +29,7 @@ class Slider {
                 this.sliderInit = this.allImages.length;
             }
 
-            this.sliderAll = document.querySelectorAll('.slider img');
-            this.sliderAll.forEach((img) => {
+            this.allImages.forEach((img) => {
                 img.classList.remove('active-slider');
             });
             document.querySelector(`.slide-image-${this.sliderInit}`).classList.add('active-slider');
@@ -48,8 +47,7 @@ class Slider {
                 this.sliderInit = 1;
             }
 
-            this.sliderAll = document.querySelectorAll('.slider img');
-            this.sliderAll.forEach((img) => {
+            this.allImages.forEach((img) => {
                 img.classList.remove('active-slider');
             });
             document.querySelector(`.slide-image-${this.sliderInit}`).classList.add('active-slider');
