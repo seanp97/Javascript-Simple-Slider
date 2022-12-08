@@ -2,10 +2,6 @@ Simple slider JS library
 
 HTML needs to be as follows...
 
-Simple slider JS library
-
-HTML needs to be as follows...
-
     <div class="slider-wrapper">
         <img src="" />
 
@@ -26,21 +22,7 @@ To use please instantiate the JS class in the main js file of your liking.
 
 * let slider = new Slider(".slider-wrapper");    
 
-Please note the arguement passed in is the slider parent wrapper. This can be named to your liking.
-
-We then call the two methods for the previous and next.
-
-* slider.PrevBtn('#prev');
-* slider.NextBtn('#next');
-
-Again, these can be called something different. Also change reference in HTML.
-
-
-To use please instantiate the JS class in the main js file of your liking.
-
-* let slider = new Slider(".slider-wrapper");    
-
-Please note the arguement passed in is the slider parent wrapper. This can be named to your liking.
+Please note the argument passed in is the slider parent wrapper. This can be named to your liking.
 
 We then call the two methods for the previous and next.
 
