@@ -18,8 +18,8 @@ class Slider {
 
         this.mainImage = document.querySelector(`${this._wrapper} > img`);
         this.mainImage.classList.add('slider-main-image');
-        this.mainImage.style.minWidth = '200px';
-        this.mainImage.style.minHeight = '200px';
+        this.mainImage.style.minWidth = '1px';
+        this.mainImage.style.minHeight = '1px';
     }
 
     PrevBtn(el) {
