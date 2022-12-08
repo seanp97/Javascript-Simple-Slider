@@ -24,7 +24,7 @@ class Slider {
 
     PrevBtn(el) {
         this._el = el;
-        document.querySelector(this._el).addEventListener('click', () => {
+        document.querySelector(`.button-group ${this._el}`).addEventListener('click', () => {
             this.sliderInit--;
             if(this.sliderInit === 0) {
                 this.sliderInit = this.allImages.length;
@@ -37,7 +37,7 @@ class Slider {
 
     NextBtn(el) {
         this._el = el;
-        document.querySelector('#next').addEventListener('click', () => {
+        document.querySelector(`.button-group ${this._el}`).addEventListener('click', () => {
             this.sliderInit++;
             if(this.sliderInit > this.allImages.length) {
                 this.sliderInit = 1;
