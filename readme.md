@@ -62,8 +62,6 @@ Make sure to include both the slider.css and slider.js files in your HTML.
                 <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" />
                 <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" />
                 <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" />
-                <img src="https://cdn.pixabay.com/photo/2022/11/24/15/18/car-7614510_960_720.jpg" />
-                <img src="https://cdn.pixabay.com/photo/2022/11/27/18/01/flower-7620426_960_720.jpg" />
             </div>
 
             <div class="button-group">
