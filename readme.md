@@ -43,3 +43,34 @@ Make sure to include both the slider.css and slider.js files in your HTML.
 
         <div class="dots"></div>
 
+
+* My finished example would be this..
+
+    let slider = new Slider(".slider-wrapper");    
+    slider.PrevBtn('#prev');
+    slider.NextBtn('#next');
+    slider.Dots();
+
+
+    ------------------
+
+
+        <div class="slider-wrapper">
+            <img src="" />
+
+            <div class="slider">
+                <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" />
+                <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" />
+                <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" />
+                <img src="https://cdn.pixabay.com/photo/2022/11/24/15/18/car-7614510_960_720.jpg" />
+                <img src="https://cdn.pixabay.com/photo/2022/11/27/18/01/flower-7620426_960_720.jpg" />
+            </div>
+
+            <div class="button-group">
+                <button id="prev">Previous</button>
+                <button id="next">Next</button>
+            </div>
+
+            <div class="dots"></div>
+
+        </div>
