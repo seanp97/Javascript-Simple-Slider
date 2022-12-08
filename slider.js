@@ -3,19 +3,20 @@ class Slider {
     constructor(wrapper) {
         this._wrapper = wrapper;
         this.el = document.querySelector(this._wrapper);
-        this.sliderInit = 0;
+        this.sliderInit = 1;
         this.allImages = document.querySelectorAll('.slider img');
 
         this.allImages.forEach((image, index) => {
             if(index != this.sliderInit - 1) {
                 this.initImage = document.querySelector('.slider img:first-of-type').src;
-                document.querySelector('.slider img:first-of-type').classList.add('active-slider');
                 document.querySelector(`${this._wrapper} > img`).src = this.initImage;
             }
         
             this.sliderIndex = index + 1;
             image.classList.add(`slide-image-${this.sliderIndex}`)
         });
+
+        document.querySelector('.slider img:first-of-type').classList.add('active-slider');
 
         console.log('Initialized');
     }
