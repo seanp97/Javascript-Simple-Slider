@@ -30,7 +30,7 @@ class Slider {
 
             this.sliderAll = document.querySelectorAll('.slider img');
             this.sliderAll.forEach((img) => {
-                img.classList.remove('active');
+                img.classList.remove('active-slider');
             });
             document.querySelector(`.slide-image-${this.sliderInit}`).classList.add('active-slider');
 
@@ -49,7 +49,7 @@ class Slider {
 
             this.sliderAll = document.querySelectorAll('.slider img');
             this.sliderAll.forEach((img) => {
-                img.classList.remove('active');
+                img.classList.remove('active-slider');
             });
             document.querySelector(`.slide-image-${this.sliderInit}`).classList.add('active-slider');
 
