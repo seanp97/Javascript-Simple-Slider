@@ -1,4 +1,4 @@
-Simple slider JS library
+Simple JS Slider library
 
 HTML needs to be as follows...
 
