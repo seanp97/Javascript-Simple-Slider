@@ -22,6 +22,23 @@ class Slider {
         this.mainImage.style.minHeight = '1px';
     }
 
+    SliderCommon() {
+        this._dots = document.querySelector(`${this._wrapper} .dots`);
+
+        if(this._dots) {  
+            this._allDots = document.querySelectorAll('.dots .dot');
+
+            this._allDots.forEach((dot) => {
+                dot.classList.remove('dot-active');
+            });
+
+            document.querySelector(`.dots .dot:nth-of-type(${this.sliderInit})`).classList.add('dot-active');
+        }
+
+        this.currentImage = document.querySelector(`.slide-image-${this.sliderInit}`).src;
+        document.querySelector(`${this._wrapper} > img`).src = this.currentImage;
+    }
+
     PrevBtn(el) {
         this._el = el;
         document.querySelector(`.button-group ${this._el}`).addEventListener('click', () => {
@@ -30,21 +47,7 @@ class Slider {
                 this.sliderInit = this.allImages.length;
             }
 
-            this._dots = document.querySelector(`${this._wrapper} .dots`);
-
-            if(this._dots) {  
-                this._allDots = document.querySelectorAll('.dots .dot');
-
-                this._allDots.forEach((dot) => {
-                    dot.classList.remove('dot-active');
-                });
-
-                document.querySelector(`.dots .dot:nth-of-type(${this.sliderInit})`).classList.add('dot-active');
-            }
-
-
-            this.currentImage = document.querySelector(`.slide-image-${this.sliderInit}`).src;
-            document.querySelector(`${this._wrapper} > img`).src = this.currentImage;
+            this.SliderCommon();
         })
     }
 
@@ -56,20 +59,7 @@ class Slider {
                 this.sliderInit = 1;
             }
 
-            this._dots = document.querySelector(`${this._wrapper} .dots`);
-
-            if(this._dots) {  
-                this._allDots = document.querySelectorAll('.dots .dot');
-
-                this._allDots.forEach((dot) => {
-                    dot.classList.remove('dot-active');
-                });
-
-                document.querySelector(`.dots .dot:nth-of-type(${this.sliderInit})`).classList.add('dot-active');
-            }
-
-            this.currentImage = document.querySelector(`.slide-image-${this.sliderInit}`).src;
-            document.querySelector(`${this._wrapper} > img`).src = this.currentImage;
+            this.SliderCommon();
         })
     }
 
