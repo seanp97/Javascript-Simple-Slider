@@ -20,7 +20,6 @@ class Slider {
         this.mainImage.classList.add('slider-main-image');
         this.mainImage.style.minWidth = '200px';
         this.mainImage.style.minHeight = '200px';
-        document.querySelector('.slider img:first-of-type').classList.add('active-slider');
     }
 
     PrevBtn(el) {
@@ -30,11 +29,6 @@ class Slider {
             if(this.sliderInit === 0) {
                 this.sliderInit = this.allImages.length;
             }
-
-            this.allImages.forEach((img) => {
-                img.classList.remove('active-slider');
-            });
-            document.querySelector(`.slide-image-${this.sliderInit}`).classList.add('active-slider');
 
             this.currentImage = document.querySelector(`.slide-image-${this.sliderInit}`).src;
             document.querySelector(`${this._wrapper} > img`).src = this.currentImage;
@@ -48,11 +42,6 @@ class Slider {
             if(this.sliderInit > this.allImages.length) {
                 this.sliderInit = 1;
             }
-
-            this.allImages.forEach((img) => {
-                img.classList.remove('active-slider');
-            });
-            document.querySelector(`.slide-image-${this.sliderInit}`).classList.add('active-slider');
 
             this.currentImage = document.querySelector(`.slide-image-${this.sliderInit}`).src;
             document.querySelector(`${this._wrapper} > img`).src = this.currentImage;
