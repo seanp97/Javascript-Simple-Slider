@@ -30,6 +30,19 @@ class Slider {
                 this.sliderInit = this.allImages.length;
             }
 
+            this._dots = document.querySelector(`${this._wrapper} .dots`);
+
+            if(this._dots) {  
+                this._allDots = document.querySelectorAll('.dots .dot');
+
+                this._allDots.forEach((dot) => {
+                    dot.classList.remove('dot-active');
+                });
+
+                document.querySelector(`.dots .dot:nth-of-type(${this.sliderInit})`).classList.add('dot-active');
+            }
+
+
             this.currentImage = document.querySelector(`.slide-image-${this.sliderInit}`).src;
             document.querySelector(`${this._wrapper} > img`).src = this.currentImage;
         })
@@ -41,6 +54,18 @@ class Slider {
             this.sliderInit++;
             if(this.sliderInit > this.allImages.length) {
                 this.sliderInit = 1;
+            }
+
+            this._dots = document.querySelector(`${this._wrapper} .dots`);
+
+            if(this._dots) {  
+                this._allDots = document.querySelectorAll('.dots .dot');
+
+                this._allDots.forEach((dot) => {
+                    dot.classList.remove('dot-active');
+                });
+
+                document.querySelector(`.dots .dot:nth-of-type(${this.sliderInit})`).classList.add('dot-active');
             }
 
             this.currentImage = document.querySelector(`.slide-image-${this.sliderInit}`).src;
@@ -59,6 +84,8 @@ class Slider {
                 });
                 dot.classList.add('dot-active');
 
+                this.sliderInit = index + 1;
+
                 this.getImageSrc = document.querySelector(`.slider img:nth-of-type(${index + 1})`).src;
                 document.querySelector(`${this._wrapper} > img`).src = this.getImageSrc;
             });
@@ -70,7 +97,7 @@ class Slider {
 
         if(this._dots) {            
             for(let i = 0; i < this.allImages.length; i++) {
-                this._dots.innerHTML += `<span class="dot dot-${i + 1}"></span>`;
+                this._dots.innerHTML += `<span class="dot"></span>`;
             }
         }
         document.querySelector('.dots .dot:first-of-type').classList.add('dot-active');
