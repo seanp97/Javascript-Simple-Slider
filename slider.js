@@ -94,4 +94,8 @@ class Slider {
         this.DotSlider();
     }
 
+    SliderInit() {
+        return this.sliderInit;
+    }
+
 }
