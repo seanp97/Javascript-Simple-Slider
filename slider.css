@@ -6,3 +6,30 @@
 .slider img {
     display: none;
 }
+
+.dots {
+    margin-top: 5px;
+}
+
+.dot:not(:last-of-type) {
+    margin-right: 3px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot-active {
+    background-color: #000;
+}
+
+.slider-wrapper img {
+    height: 350px;
+    width: 600px;
+    object-fit: cover;
+}
