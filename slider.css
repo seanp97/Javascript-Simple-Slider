@@ -5,3 +5,7 @@ button {
 .button-group {
     display: block;
 }
+
+.slider img {
+    display: none;
+}
