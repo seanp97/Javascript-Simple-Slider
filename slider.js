@@ -12,8 +12,7 @@ class Slider {
                 document.querySelector(`${this._wrapper} > img`).src = this.initImage;
             }
         
-            this.sliderIndex = index + 1;
-            image.classList.add(`slide-image-${this.sliderIndex}`)
+            image.classList.add(`slide-image-${index + 1}`)
         });
 
         this.mainImage = document.querySelector(`${this._wrapper} > img`);
