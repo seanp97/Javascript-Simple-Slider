@@ -33,7 +33,7 @@ Again, these can be called something different. Also change reference in HTML.
 
 Make sure to include both the slider.css and slider.js files in your HTML.
 
-- DOTS
+DOTS
 
 - If you would like to include dots on your page please add dots below button-group div like so. Also call slider.Dots(); in your main js file.
 
