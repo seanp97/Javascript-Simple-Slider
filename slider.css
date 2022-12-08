@@ -27,9 +27,3 @@
 .dot-active {
     background-color: #000;
 }
-
-.slider-wrapper img {
-    height: 350px;
-    width: 600px;
-    object-fit: cover;
-}
