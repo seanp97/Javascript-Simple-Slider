@@ -48,4 +48,33 @@ class Slider {
         })
     }
 
+    DotSlider() {
+        this._allDots = document.querySelectorAll('.dots .dot');
+
+        this._allDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+
+                this._allDots.forEach((notThis) => {
+                    notThis.classList.remove('dot-active');
+                });
+                dot.classList.add('dot-active');
+
+                this.getImageSrc = document.querySelector(`.slider img:nth-of-type(${index + 1})`).src;
+                document.querySelector(`${this._wrapper} > img`).src = this.getImageSrc;
+            });
+        });
+    }
+
+    Dots() {
+        this._dots = document.querySelector(`${this._wrapper} .dots`);
+
+        if(this._dots) {            
+            for(let i = 0; i < this.allImages.length; i++) {
+                this._dots.innerHTML += `<span class="dot dot-${i + 1}"></span>`;
+            }
+        }
+        document.querySelector('.dots .dot:first-of-type').classList.add('dot-active');
+        this.DotSlider();
+    }
+
 }
