@@ -26,8 +26,8 @@ Please note the argument passed in is the slider parent wrapper. This can be nam
 
 We then call the two methods for the previous and next.
 
-* slider.PrevBtn('#prev');
-* slider.NextBtn('#next');
+* slider.Previous('#prev');
+* slider.Next('#next');
 
 Again, these can be called something different. Also change reference in HTML.
 
@@ -47,11 +47,19 @@ DOTS
         <div class="dots"></div>
 
 
+
+- If you want the slider to automatically slide call AutoSlide
+E.G. slider.AutoSlide(3000);
+
+If no argument is set, 5000ms is the default
+
+
+
 * My finished example would be this..
 
     let slider = new Slider(".slider-wrapper");    
-    slider.PrevBtn('#prev');
-    slider.NextBtn('#next');
+    slider.Previous('#prev');
+    slider.Next('#next');
     slider.Dots();
 
 
