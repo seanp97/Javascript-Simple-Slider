@@ -66,3 +66,24 @@
 .slider-text {
     color: #FFF;
 }
+
+#prev,
+#next {
+    cursor: pointer;
+}
+
+.button-group.inline-slider {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.button-group.inline-slider *:first-child {
+    margin-left: 10px;
+}
+
+.button-group.inline-slider *:nth-child(2) {
+    margin-right: 10px;
+}
