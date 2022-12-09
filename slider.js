@@ -7,6 +7,10 @@ class Slider {
         this.allImages = document.querySelectorAll('.slider img');
         this.el.style.position = 'relative';
 
+        this._mainImageElement = document.createElement('img');
+        document.querySelector(`${this._wrapper}`).insertBefore(this._mainImageElement, this.el.firstChild);
+        document.querySelector('.button-group').outerHTML += '<div class="dots"></div>';
+
         this.allImages.forEach((image, index) => {
             if(index != this.sliderInit - 1) {
                 this.initImage = document.querySelector('.slider img:first-of-type').src;
@@ -30,8 +34,6 @@ class Slider {
             document.querySelector(`${this._wrapper} > img`).outerHTML += `<div class="slider-text centered"></div>`;
         }
 
-        
-
         this.mainImage = document.querySelector(`${this._wrapper} > img`);
         this.mainImage.classList.add('slider-main-image');
         this.mainImage.style.minWidth = '1px';
@@ -41,6 +43,8 @@ class Slider {
         this._mainHeight = document.querySelector(`${this._wrapper} > img`).offsetHeight;
         document.querySelector(`${this._wrapper} > img`).style.width = `${this._mainWidth}px`;
         document.querySelector(`${this._wrapper} > img`).style.height = `${this._mainHeight}px`;
+
+        this.Dots();
     }
 
     SliderCommon() {
@@ -152,6 +156,14 @@ class Slider {
 
             this.SliderCommon();
         }, this._timeout);
+    }
+
+    HideDots() {
+        document.querySelector('.dots').style.display = 'none';
+    }
+
+    HideButtons() {
+        document.querySelector('.button-group').style.display = 'none';
     }
 
     SliderInit() {
