@@ -22,9 +22,7 @@ class Slider {
     }
 
     SliderCommon() {
-        this._dots = document.querySelector(`${this._wrapper} .dots`);
-
-        if(this._dots) {  
+        if(this.DotExists()) {  
             this._allDots = document.querySelectorAll('.dots .dot');
 
             this._allDots.forEach((dot) => {
@@ -38,9 +36,9 @@ class Slider {
         document.querySelector(`${this._wrapper} > img`).src = this.currentImage;
     }
 
-    PrevBtn(el) {
-        this._el = el;
-        document.querySelector(`.button-group ${this._el}`).addEventListener('click', () => {
+    Previous(el) {
+        this._elPrev = el;
+        document.querySelector(`.button-group ${this._elPrev}`).addEventListener('click', () => {
             this.sliderInit--;
             if(this.sliderInit === 0) {
                 this.sliderInit = this.allImages.length;
@@ -50,9 +48,9 @@ class Slider {
         })
     }
 
-    NextBtn(el) {
-        this._el = el;
-        document.querySelector(`.button-group ${this._el}`).addEventListener('click', () => {
+    Next(el) {
+        this._elNext = el;
+        document.querySelector(`.button-group ${this._elNext}`).addEventListener('click', () => {
             this.sliderInit++;
             if(this.sliderInit > this.allImages.length) {
                 this.sliderInit = 1;
@@ -71,8 +69,8 @@ class Slider {
                 this._allDots.forEach((notThis) => {
                     notThis.classList.remove('dot-active');
                 });
-                dot.classList.add('dot-active');
 
+                dot.classList.add('dot-active');
                 this.sliderInit = index + 1;
 
                 this.getImageSrc = document.querySelector(`.slider img:nth-of-type(${index + 1})`).src;
@@ -82,15 +80,32 @@ class Slider {
     }
 
     Dots() {
-        this._dots = document.querySelector(`${this._wrapper} .dots`);
-
-        if(this._dots) {            
+        if(this.DotExists()) {            
             for(let i = 0; i < this.allImages.length; i++) {
                 this._dots.innerHTML += `<span class="dot"></span>`;
             }
         }
         document.querySelector('.dots .dot:first-of-type').classList.add('dot-active');
         this.DotSlider();
+    }
+
+    DotExists() {
+        this._dots = document.querySelector(`${this._wrapper} .dots`);
+        if(this._dots) return true;
+        return false;
+    }
+
+    AutoSlide(timeout = 5000) {
+        this._timeout = timeout;
+
+        setInterval(() => {
+            this.sliderInit++;
+            if(this.sliderInit > this.allImages.length) {
+                this.sliderInit = 1;
+            }
+
+            this.SliderCommon();
+        }, this._timeout);
     }
 
     SliderInit() {
