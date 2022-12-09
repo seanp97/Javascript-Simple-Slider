@@ -5,15 +5,32 @@ class Slider {
         this.el = document.querySelector(this._wrapper);
         this.sliderInit = 1;
         this.allImages = document.querySelectorAll('.slider img');
+        this.el.style.position = 'relative';
 
         this.allImages.forEach((image, index) => {
             if(index != this.sliderInit - 1) {
                 this.initImage = document.querySelector('.slider img:first-of-type').src;
                 document.querySelector(`${this._wrapper} > img`).src = this.initImage;
             }
-        
-            image.classList.add(`slide-image-${index + 1}`)
         });
+
+        this._initText = document.querySelector('.slider img:first-of-type').getAttribute('slider-text');
+        this._initPos = document.querySelector('.slider img:first-of-type').getAttribute('slider-position');
+
+        if(this._initText) {
+            if(this._initPos) {
+                document.querySelector(`${this._wrapper} > img`).outerHTML += `<div class="slider-text ${this._initPos}">${this._initText}</div>`;
+            }
+            else {
+                document.querySelector(`${this._wrapper} > img`).outerHTML += `<div class="slider-text centered">${this._initText}</div>`;
+            }
+            
+        }
+        else {
+            document.querySelector(`${this._wrapper} > img`).outerHTML += `<div class="slider-text centered"></div>`;
+        }
+
+        
 
         this.mainImage = document.querySelector(`${this._wrapper} > img`);
         this.mainImage.classList.add('slider-main-image');
@@ -32,8 +49,26 @@ class Slider {
             document.querySelector(`.dots .dot:nth-of-type(${this.sliderInit})`).classList.add('dot-active');
         }
 
-        this.currentImage = document.querySelector(`.slide-image-${this.sliderInit}`).src;
+        this.currentImage = document.querySelector(`.slider img:nth-of-type(${this.sliderInit})`).src;
         document.querySelector(`${this._wrapper} > img`).src = this.currentImage;
+
+        this._sliderText = document.querySelector(`.slider img:nth-of-type(${this.sliderInit})`).getAttribute('slider-text');
+        this._sliderPos = document.querySelector(`.slider img:nth-of-type(${this.sliderInit})`).getAttribute('slider-position');
+        console.log(this._sliderPos);
+        if(this._sliderText) {
+            document.querySelector(`.slider-text`).innerText = this._sliderText;
+
+            if(this._sliderPos) {
+                document.querySelector(`.slider-text`).setAttribute('class', `slider-text ${this._sliderPos}`);
+            }
+            else {
+                document.querySelector(`.slider-text`).setAttribute('class', `slider-text centered`);
+            }
+        }
+        else {
+            document.querySelector(`.slider-text`).innerText = '';
+        }
+
     }
 
     Previous(el) {
@@ -48,6 +83,14 @@ class Slider {
         })
     }
 
+    OverLay(brightness = 75) {
+        this._brightness = brightness;
+        if(this._brightness <= 100) {
+            document.querySelector('.slider-main-image').style.filter = `brightness(0.${this._brightness})`;
+        }
+        
+    }
+
     Next(el) {
         this._elNext = el;
         document.querySelector(`.button-group ${this._elNext}`).addEventListener('click', () => {
@@ -55,7 +98,6 @@ class Slider {
             if(this.sliderInit > this.allImages.length) {
                 this.sliderInit = 1;
             }
-
             this.SliderCommon();
         })
     }
