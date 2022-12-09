@@ -39,10 +39,8 @@ class Slider {
         this.mainImage.style.minWidth = '1px';
         this.mainImage.style.minHeight = '1px';
 
-        this._mainWidth = document.querySelector(`${this._wrapper}`).offsetWidth;
-        this._mainHeight = document.querySelector(`${this._wrapper} > img`).offsetHeight;
-        document.querySelector(`${this._wrapper} > img`).style.width = `${this._mainWidth}px`;
-        document.querySelector(`${this._wrapper} > img`).style.height = `${this._mainHeight}px`;
+        document.querySelector(`${this._wrapper} > img`).style.width = 'inherit';
+        document.querySelector(`${this._wrapper} > img`).style.height = 'inherit';
 
         this.Dots();
     }
