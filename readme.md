@@ -38,7 +38,7 @@ Make sure to include both the slider.css and slider.js files in your HTML.
 
 Dots are automatically shown, but if you would like to hide call the HideDots() method like slider.HideDots();
 
-This can also be applied to the buttons. Call HideButtons() to hide the buttons
+This can also be applied to the buttons. Call HideButtons() to hide the buttons like slider.HideButtons();
 
 
 If you want the slider to automatically slide, call the AutoSlide method
@@ -70,15 +70,6 @@ If you want include text over your image add the slider-text attribute in the HT
         </div>
 
     </div>
-
-
-
-
-If you would like to auto slide the images call the AutoSlide() method like slider.AutoSlide();
-
-AutoSlide(3000) will call every 3000ms
-
-By default it will be 5000ms if no argument is passed
 
 
 
