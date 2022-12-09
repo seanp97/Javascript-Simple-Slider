@@ -49,6 +49,10 @@ E.G. slider.AutoSlide(3000);
 If no argument is set, 5000ms is the default
 
 
+If you would like you next & previous buttons alligned inside the image call the ButtonInlineSlider() method like slider.ButtonInlineSlider();
+This will add a class to align with image with a bit of CSS. Override any styles that you wish to change.
+
+
 If you want include text over your image add the slider-text attribute in the HTML like so. The slider-position attribute will place the text in 1 of 5 positions.
 
     "centered"
