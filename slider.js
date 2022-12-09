@@ -11,12 +11,8 @@ class Slider {
         document.querySelector(`${this._wrapper}`).insertBefore(this._mainImageElement, this.el.firstChild);
         document.querySelector('.button-group').outerHTML += '<div class="dots"></div>';
 
-        this.allImages.forEach((image, index) => {
-            if(index != this.sliderInit - 1) {
-                this.initImage = document.querySelector('.slider img:first-of-type').src;
-                document.querySelector(`${this._wrapper} > img`).src = this.initImage;
-            }
-        });
+        this.initImage = document.querySelector('.slider img:first-of-type').src;
+        document.querySelector(`${this._wrapper} > img`).src = this.initImage;
 
         this._initText = document.querySelector('.slider img:first-of-type').getAttribute('slider-text');
         this._initPos = document.querySelector('.slider img:first-of-type').getAttribute('slider-position');
@@ -75,6 +71,10 @@ class Slider {
             document.querySelector(`.slider-text`).innerText = '';
         }
 
+    }
+
+    ButtonInlineSlider() {
+        document.querySelector('.button-group').classList.add('inline-slider');
     }
 
     Previous(el) {
