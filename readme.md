@@ -1,5 +1,7 @@
 Simple JS Slider library
 
+Please see "https://codepen.io/seanp97/pen/xxzewWY" for example
+
 HTML needs to be as follows...
 
 Please note 'slider-wrapper class can be named whatever you like'
