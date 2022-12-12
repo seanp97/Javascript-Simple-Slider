@@ -1,11 +1,13 @@
 class Slider {
 
-    constructor(wrapper) {
+    constructor(wrapper, timeout = 5000) {
         this._wrapper = wrapper;
         this.el = document.querySelector(this._wrapper);
         this.sliderInit = 1;
         this.allImages = document.querySelectorAll('.slider img');
         this.el.style.position = 'relative';
+        this._timeout = timeout;
+        this.SetInterval = 0;
 
         this._mainImageElement = document.createElement('img');
         document.querySelector(`${this._wrapper}`).insertBefore(this._mainImageElement, this.el.firstChild);
@@ -38,6 +40,7 @@ class Slider {
         document.querySelector(`${this._wrapper} > img`).style.width = 'inherit';
         document.querySelector(`${this._wrapper} > img`).style.height = 'inherit';
 
+        this.AutoSlide(this._timeout);
         this.Dots();
     }
 
@@ -85,7 +88,9 @@ class Slider {
                 this.sliderInit = this.allImages.length;
             }
 
+            clearInterval(this.SetInterval);
             this.SliderCommon();
+            this.AutoSlide();
         })
     }
 
@@ -104,7 +109,10 @@ class Slider {
             if(this.sliderInit > this.allImages.length) {
                 this.sliderInit = 1;
             }
-            this.SliderCommon();
+
+            clearInterval(this.SetInterval);
+            this.SliderCommon(); 
+            this.AutoSlide();
         })
     }
 
@@ -143,10 +151,8 @@ class Slider {
         return false;
     }
 
-    AutoSlide(timeout = 5000) {
-        this._timeout = timeout;
-
-        setInterval(() => {
+    AutoSlide() {
+        this.SetInterval = setInterval(() => {
             this.sliderInit++;
             if(this.sliderInit > this.allImages.length) {
                 this.sliderInit = 1;
