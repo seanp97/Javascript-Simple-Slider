@@ -43,13 +43,13 @@ Dots are automatically shown, but if you would like to hide call the HideDots() 
 This can also be applied to the buttons. Call HideButtons() to hide the buttons like slider.HideButtons();
 
 
-If you want the slider to automatically slide, call the AutoSlide method
+If you want the slider to automatically slide, call the AutoSlide method. This is is et in milliseconds
 E.G. slider.AutoSlide(3000);
 
 If no argument is set, 5000ms is the default
 
 
-If you would like you next & previous buttons alligned inside the image call the ButtonInlineSlider() method like slider.ButtonInlineSlider();
+If you would like your next & previous buttons alligned inside the image call the ButtonInlineSlider() method like slider.ButtonInlineSlider();
 This will add a class to align with image with a bit of CSS. Override any styles that you wish to change.
 
 
