@@ -176,4 +176,8 @@ class Slider {
         return this.sliderInit;
     }
 
+    DotsCentered() {
+        document.querySelector('.dots').style.textAlign = 'center';
+    }
+
 }
