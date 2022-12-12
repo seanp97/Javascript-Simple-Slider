@@ -43,8 +43,7 @@ Dots are automatically shown, but if you would like to hide call the HideDots() 
 This can also be applied to the buttons. Call HideButtons() to hide the buttons like slider.HideButtons();
 
 
-If you want the slider to automatically slide, call the AutoSlide method. This is is et in milliseconds
-E.G. slider.AutoSlide(3000);
+The slider slides automatically, and is set in the object instance like so... new Slider(".slider-wrapper", 10000);
 
 If no argument is set, 5000ms is the default
 
@@ -88,11 +87,11 @@ By default the percentage overlay is 75 if no argument is passed in
 
 * My finished example would be this..
 
-    let slider = new Slider(".slider-wrapper");    
+    let slider = new Slider(".slider-wrapper", 10000);    
     slider.Previous('#prev');
     slider.Next('#next');
-    slider.AutoSlide();
     slider.OverLay(60);
+    slider.ButtonInlineSlider();
 
 
     ------------------
