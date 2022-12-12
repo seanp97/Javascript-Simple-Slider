@@ -131,6 +131,8 @@ class Slider {
 
                 this.getImageSrc = document.querySelector(`.slider img:nth-of-type(${index + 1})`).src;
                 document.querySelector(`${this._wrapper} > img`).src = this.getImageSrc;
+                clearInterval(this.SetInterval);
+                this.AutoSlide();
             });
         });
     }
