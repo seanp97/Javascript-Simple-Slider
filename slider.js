@@ -80,6 +80,10 @@ class Slider {
         document.querySelector('.button-group').classList.add('inline-slider');
     }
 
+    ObjectFit() {
+        document.querySelector(`${this._wrapper} > img`).style.objectFit = 'cover';
+    }
+
     Previous(el) {
         this._elPrev = el;
         document.querySelector(`.button-group ${this._elPrev}`).addEventListener('click', () => {
@@ -176,7 +180,7 @@ class Slider {
         return this.sliderInit;
     }
 
-    DotsCentered() {
+    DotsCenter() {
         document.querySelector('.dots').style.textAlign = 'center';
     }
 
