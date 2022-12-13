@@ -82,8 +82,10 @@
 
 .button-group.inline-slider *:first-child {
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .button-group.inline-slider *:nth-child(2) {
     margin-right: 10px;
+    cursor: pointer;
 }
