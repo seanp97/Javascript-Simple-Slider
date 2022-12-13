@@ -53,6 +53,8 @@ This will add a class to align with image with a bit of CSS. Override any styles
 
 If you would like the dots centered horizontally call the DotsCenter() method like so... slider.DotsCenter();
 
+If you want the image to scale, call the ObjectFit() method like so... slider.ObjectFit();
+
 
 If you want include text over your image add the slider-text attribute in the HTML like so. The slider-position attribute will place the text in 1 of 5 positions.
 
