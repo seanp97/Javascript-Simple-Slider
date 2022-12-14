@@ -10,9 +10,13 @@ Same applies to '#prev'and '#next' for the buttons
     <div class="slider-wrapper">
 
         <div class="slider">
-            <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" />
-            <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" />
-            <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" />
+        <div class="slider">
+            <img src="https://cdn.pixabay.com/photo/2022/12/07/16/07/palm-7641522_960_720.jpg" />
+            <img src="https://cdn.pixabay.com/photo/2022/03/03/17/53/thuja-7045798_960_720.jpg" />
+            <img src="https://cdn.pixabay.com/photo/2022/12/06/00/25/beach-7637946_960_720.jpg" />
+            <img src="https://cdn.pixabay.com/photo/2022/11/27/11/23/building-7619503_960_720.jpg" />
+            <img src="https://cdn.pixabay.com/photo/2022/11/02/22/33/autumn-7566201_1280.jpg" />
+        </div>
         </div>
 
         <div class="button-group">
@@ -68,10 +72,12 @@ If you want include text over your image add the slider-text attribute in the HT
     <div class="slider-wrapper">
         
         <div class="slider">
-            <img slider-text="Hello World" slider-position="top-left" src="https://www.w3schools.com/howto/img_mountains_wide.jpg" />
-            <img slider-text="Hello Two" slider-position="bottom-right" src="https://www.w3schools.com/howto/img_snow_wide.jpg" />
-            <img slider-text="Hello Three" slider-position="centered" src="https://www.w3schools.com/howto/img_nature_wide.jpg" />
-       </div>
+            <img slider-text="Hello World" slider-position="top-left" src="https://cdn.pixabay.com/photo/2022/12/07/16/07/palm-7641522_960_720.jpg" />
+            <img slider-text="Hello Two" slider-position="bottom-right" src="https://cdn.pixabay.com/photo/2022/03/03/17/53/thuja-7045798_960_720.jpg" />
+            <img slider-text="Hello Three" slider-position="centered" src="https://cdn.pixabay.com/photo/2022/12/06/00/25/beach-7637946_960_720.jpg" />
+            <img slider-text="Hello Four" slider-position="bottom-left" src="https://cdn.pixabay.com/photo/2022/11/27/11/23/building-7619503_960_720.jpg" />
+            <img slider-text="Hello Five" slider-position="top-right" src="https://cdn.pixabay.com/photo/2022/11/02/22/33/autumn-7566201_1280.jpg" />
+        </div>
 
         <div class="button-group">
             <button id="prev">Previous</button>
