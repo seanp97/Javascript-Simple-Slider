@@ -86,6 +86,7 @@ class Slider {
 
     Previous(el) {
         this._elPrev = el;
+        document.querySelector(`${this._elPrev}`).style.cursor = 'pointer';
         document.querySelector(`.button-group ${this._elPrev}`).addEventListener('click', () => {
             this.sliderInit--;
             if(this.sliderInit === 0) {
@@ -108,6 +109,7 @@ class Slider {
 
     Next(el) {
         this._elNext = el;
+        document.querySelector(`${this._elNext}`).style.cursor = 'pointer';
         document.querySelector(`.button-group ${this._elNext}`).addEventListener('click', () => {
             this.sliderInit++;
             if(this.sliderInit > this.allImages.length) {
