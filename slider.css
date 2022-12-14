@@ -67,10 +67,6 @@
     color: #FFF;
 }
 
-#prev,
-#next {
-    cursor: pointer;
-}
 
 .button-group.inline-slider {
     position: absolute;
